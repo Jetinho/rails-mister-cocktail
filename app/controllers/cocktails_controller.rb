@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
+  before_action :set_cocktail, only: [:show, :edit, :update, :destroy, :new_dose, :destroy_dose]
 
   # GET /cocktails
   # GET /cocktails.json
@@ -59,6 +59,19 @@ class CocktailsController < ApplicationController
       format.html { redirect_to cocktails_url, notice: 'Cocktail was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def new_dose
+    @dose = Dose.new
+    @ingredients = Ingredient.all
+  end
+
+  def create_dose
+
+  end
+
+  def destroy_dose
+
   end
 
   private
