@@ -61,18 +61,7 @@ class CocktailsController < ApplicationController
     end
   end
 
-  def new_dose
-    @dose = Dose.new
-    @ingredients = Ingredient.all
-  end
 
-  def create_dose
-
-  end
-
-  def destroy_dose
-
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

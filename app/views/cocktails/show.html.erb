@@ -4,6 +4,11 @@
   <strong>Name:</strong>
   <%= @cocktail.name %>
 </p>
+  <% @cocktail.doses.each do |dose| %>
+<p><%= "#{dose.description} of #{Ingredient.find(dose.ingredient_id).name}" %></p>
+<p> - <%= link_to 'Delete dose', dose_path(dose), method: :delete %></p>
+<% end %>
+<%= link_to 'Add dose', new_cocktail_dose_path(@cocktail) %> |
 
 <%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
 <%= link_to 'Back', cocktails_path %>
